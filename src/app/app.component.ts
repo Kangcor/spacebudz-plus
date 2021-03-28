@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { Spacebudz } from './spacebudz';
+import { Component } from "@angular/core";
+import { BudzService } from "./services/budz.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'spacebudz-plus';
+  title = "spacebudz-plus";
   budz = [];
 
-  constructor() {
-    this.budz = Spacebudz.budz;
+  constructor(private _budz: BudzService) {
+    this.budz = this._budz.processScarcity();
   }
 }

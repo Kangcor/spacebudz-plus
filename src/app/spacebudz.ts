@@ -96600,6 +96600,5 @@ export class Spacebudz {
           ]
        }
       ];
-  static budz: any[];
-
+  
 }
