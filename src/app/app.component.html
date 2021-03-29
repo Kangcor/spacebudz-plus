@@ -1,15 +1,2 @@
-<span class="budz" *ngFor="let bud of budz">
-  <img
-    *ngIf="bud.id < 10"
-    src="{{ 'https://spacebudz.io/spacebudz/bud' + bud.id + '.png' }}"
-    width="300px"
-  />
-  ID: {{ bud.id }}<br />
-  Type: {{ bud.type }}<br />
-  Gadgets: {{ bud.gadgets }}<br />
-  Type scarcity: {{ bud.scarcity.type }}<br />
-  Gadget scarcity: <br />
-  <div *ngFor="let gadget of bud.scarcity.gadgets | keyvalue">
-    {{ gadget.key }}: {{ gadget.value }}
-  </div>
-</span>
+<router-outlet></router-outlet>
+<sbp-loading></sbp-loading>

@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs/internal/Observable";
 import { SpaceBud } from "../constants";
 import { ScarcityMapping } from "../constants/scarcity";
 import { Spacebudz } from "../spacebudz";
@@ -7,14 +8,18 @@ import { Spacebudz } from "../spacebudz";
 export class BudzService {
   private budz: SpaceBud[] = Spacebudz.budz;
 
-  public processScarcity() {
-    this.budz.map(this._processBudScarcity);
-    return this.budz;
+  public processScarcity$(): Observable<SpaceBud[]> {
+    return new Observable(obs => {
+      const a = this.budz.map(this._processBudScarcity);
+      obs.next(this.budz);
+      obs.complete();
+    });
   }
 
   private _processBudScarcity(bud: SpaceBud) {
     const budScarcity = ScarcityMapping.type[bud.type];
     const gadgetScarcity: { [key: string]: number } = {};
+
     bud.gadgets.forEach((gadget: string) => {
       gadgetScarcity[gadget] = ScarcityMapping.gadgets[gadget];
     });
