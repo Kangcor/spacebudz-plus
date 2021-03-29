@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { debounceTime } from "rxjs/operators";
+import { SearchFilter } from "src/app/constants";
 import { ScarcityMapping } from "src/app/constants/scarcity";
 
 @Component({
@@ -8,9 +9,10 @@ import { ScarcityMapping } from "src/app/constants/scarcity";
   styleUrls: ["./filter.component.scss"]
 })
 export class FilterComponent implements OnInit {
+  @Output() change = new EventEmitter<SearchFilter>();
   public types = [];
   public filter = { types: [] };
-  private _searchTrigger = new EventEmitter<any>();
+  private _searchTrigger = new EventEmitter<SearchFilter>();
 
   constructor() {
     this.types = Object.keys(ScarcityMapping.type);
@@ -25,10 +27,11 @@ export class FilterComponent implements OnInit {
   }
 
   private _setupSearch() {
-    this._searchTrigger.pipe(debounceTime(200)).subscribe((filter: any) => {
-      console.log("Launch search with filter:");
-      console.log(filter);
-    });
+    this._searchTrigger
+      .pipe(debounceTime(200))
+      .subscribe((filter: SearchFilter) => {
+        this.change.emit(filter);
+      });
   }
 
   private _updateTypeFilter(type: string, value: boolean) {

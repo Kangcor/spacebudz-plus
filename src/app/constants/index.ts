@@ -9,3 +9,7 @@ export interface SpaceBud {
     };
   };
 }
+
+export interface SearchFilter {
+  types: string[];
+}

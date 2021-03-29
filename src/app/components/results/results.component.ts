@@ -13,9 +13,12 @@ export class ResultsComponent implements OnInit {
   constructor(private _budz: BudzService, private _store: SbpStore) {}
 
   ngOnInit() {
-    this._budz.processScarcity$().subscribe((budz: SpaceBud[]) => {
-      this.budz = budz.slice(0, 20);
-      this._store.setLoading(false);
-    });
+    this._store
+      ._select(state => state.results)
+      .subscribe((budz: SpaceBud[]) => {
+        console.log(budz.length);
+        this.budz = budz.slice(0, 20);
+        this._store.setLoading(false);
+      });
   }
 }
