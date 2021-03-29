@@ -10,6 +10,7 @@ import { ResultsComponent } from "./components/results/results.component";
 import { SearchComponent } from "./pages/search/search.component";
 import { BudzService } from "./services/budz.service";
 import { LoadingComponent } from './components/loading/loading.component';
+import { PillComponent } from './components/pill/pill.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     FilterComponent,
     ResultsComponent,
     DetailComponent,
-    LoadingComponent
+    LoadingComponent,
+    PillComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [BudzService],

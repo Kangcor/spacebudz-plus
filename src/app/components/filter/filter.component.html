@@ -1,1 +1,19 @@
-<p>filter works!</p>
+<div class="sbp-filter">
+  <div class="sbp-row sbp-subtitle">
+    Search
+  </div>
+  <div class="sbp-row">
+    <input type="text" name="keywords" class="sbp-filter-search" />
+  </div>
+  <div class="sbp-row sbp-subtitle">
+    Type
+  </div>
+  <div class="sbp-row">
+    <sbp-pill
+      *ngFor="let type of types"
+      [text]="type"
+      (change)="typeChanged(type, $event)"
+    >
+    </sbp-pill>
+  </div>
+</div>
