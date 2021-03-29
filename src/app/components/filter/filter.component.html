@@ -1,19 +1,29 @@
-<div class="sbp-filter">
-  <div class="sbp-row sbp-subtitle">
-    Search
+<form>
+  <div class="sbp-filter">
+    <div class="sbp-row sbp-subtitle">
+      Search
+    </div>
+    <div class="sbp-row">
+      <input type="text" name="keywords" class="sbp-filter-search" />
+    </div>
+
+    <div class="sbp-row sbp-subtitle">
+      Number
+    </div>
+    <div class="sbp-row">
+      <input type="range" name="min_id" />
+      <input type="range" name="max_id" />
+    </div>
+    <div class="sbp-row sbp-subtitle">
+      Type
+    </div>
+    <div class="sbp-row">
+      <sbp-pill
+        *ngFor="let type of types"
+        [text]="type"
+        (statusChange)="typeChanged(type, $event)"
+      >
+      </sbp-pill>
+    </div>
   </div>
-  <div class="sbp-row">
-    <input type="text" name="keywords" class="sbp-filter-search" />
-  </div>
-  <div class="sbp-row sbp-subtitle">
-    Type
-  </div>
-  <div class="sbp-row">
-    <sbp-pill
-      *ngFor="let type of types"
-      [text]="type"
-      (change)="typeChanged(type, $event)"
-    >
-    </sbp-pill>
-  </div>
-</div>
+</form>

@@ -9,7 +9,7 @@ import { ScarcityMapping } from "src/app/constants/scarcity";
   styleUrls: ["./filter.component.scss"]
 })
 export class FilterComponent implements OnInit {
-  @Output() change = new EventEmitter<SearchFilter>();
+  @Output() filterChange = new EventEmitter<SearchFilter>();
   public types = [];
   public filter = { types: [] };
   private _searchTrigger = new EventEmitter<SearchFilter>();
@@ -30,7 +30,7 @@ export class FilterComponent implements OnInit {
     this._searchTrigger
       .pipe(debounceTime(200))
       .subscribe((filter: SearchFilter) => {
-        this.change.emit(filter);
+        this.filterChange.emit(filter);
       });
   }
 

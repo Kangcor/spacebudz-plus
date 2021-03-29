@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 export class PillComponent implements OnInit {
   @Input() text: string;
   @Input() status: boolean = false;
-  @Output() change = new EventEmitter<boolean>();
+  @Output() statusChange = new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -16,6 +16,6 @@ export class PillComponent implements OnInit {
 
   public toggleState() {
     this.status = !this.status;
-    this.change.emit(this.status);
+    this.statusChange.emit(this.status);
   }
 }
