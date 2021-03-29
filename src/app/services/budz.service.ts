@@ -19,6 +19,14 @@ export class BudzService {
     } else {
       filtered = this._budz;
     }
+    if (filter.range.min > 0 || filter.range.max < 9999) {
+      filtered = filtered.filter((bud: SpaceBud) => {
+        return (
+          parseInt(bud.id) >= filter.range.min &&
+          parseInt(bud.id) <= filter.range.max
+        );
+      });
+    }
     this._setSearchResult(filtered);
   }
 

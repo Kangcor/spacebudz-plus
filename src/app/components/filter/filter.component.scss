@@ -12,3 +12,12 @@
 .sbp-subtitle {
   padding: 10px 2px;
 }
+
+.sbp-range-label {
+  min-width: 80px;
+
+  &.-left {
+    text-align: right;
+    margin-right: 4px;
+  }
+}
