@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { BudzService } from "src/app/services/budz.service";
 
 @Component({
   selector: "sbp-search",
@@ -6,7 +7,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./search.component.scss"]
 })
 export class SearchComponent implements OnInit {
-  constructor() {}
+  constructor(private _budz: BudzService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._budz.processScarcity();
+  }
+
+  public filterChanged(event: any) {
+    this._budz.filter(event);
+  }
 }
