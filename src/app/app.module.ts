@@ -12,6 +12,10 @@ import { PillComponent } from "./components/pill/pill.component";
 import { ResultsComponent } from "./components/results/results.component";
 import { SearchComponent } from "./pages/search/search.component";
 import { BudzService } from "./services/budz.service";
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { DonateComponent } from './pages/donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { BudzService } from "./services/budz.service";
     ResultsComponent,
     DetailComponent,
     LoadingComponent,
-    PillComponent
+    PillComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    DonateComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [BudzService],

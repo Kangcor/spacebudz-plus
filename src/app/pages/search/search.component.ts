@@ -10,7 +10,7 @@ export class SearchComponent implements OnInit {
   constructor(private _budz: BudzService) {}
 
   ngOnInit() {
-    this._budz.processScarcity();
+    // this._budz.processScarcity();
   }
 
   public filterChanged(event: any) {
