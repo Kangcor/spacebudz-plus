@@ -1,16 +1,8 @@
-import { Component } from '@angular/core';
-import { Spacebudz } from './spacebudz';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "sbp-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-  title = 'spacebudz-plus';
-  budz = [];
-
-  constructor() {
-    this.budz = Spacebudz.budz;
-  }
-}
+export class AppComponent {}

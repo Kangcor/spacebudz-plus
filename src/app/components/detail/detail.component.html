@@ -1,0 +1,15 @@
+
+<span class="budz">
+  <img
+    src="{{ '/assets/budz/bud' + bud.id + '.png' }}"
+    width="100%"
+  />
+  ID: {{ bud.id }}<br />
+  Type: {{ bud.type }}<br />
+  Gadgets: {{ bud.gadgets }}<br />
+  Type scarcity: {{ bud.scarcity.type }}<br />
+  Gadget scarcity: <br />
+  <div *ngFor="let gadget of bud.scarcity.gadgets | keyvalue">
+    {{ gadget.key }}: {{ gadget.value }}
+  </div>
+</span>
