@@ -9,3 +9,8 @@ export interface SpaceBud {
     };
   };
 }
+
+export interface SearchFilter {
+  types: string[];
+  range: { min: number; max: number };
+}

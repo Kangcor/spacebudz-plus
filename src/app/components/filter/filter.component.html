@@ -1,1 +1,50 @@
-<p>filter works!</p>
+<form [formGroup]="searchForm">
+  <div class="sbp-filter">
+    <div class="sbp-row sbp-subtitle">
+      Search
+    </div>
+    <div class="sbp-row">
+      <input
+        type="text"
+        name="keywords"
+        class="sbp-filter-search"
+        formControlName="keywords"
+      />
+    </div>
+
+    <div class="sbp-row sbp-subtitle">
+      Number
+    </div>
+    <div class="sbp-row">
+      <span class="sbp-range-label -left">{{ rangeIds.min }}</span>
+      <input
+        type="range"
+        name="min_id"
+        class="sbp-range"
+        min="0"
+        max="9998"
+        formControlName="min_id"
+      />
+      <input
+        type="range"
+        name="max_id"
+        class="sbp-range"
+        min="1"
+        max="9998"
+        formControlName="max_id"
+      />
+      <span class="sbp-range-label">{{ rangeIds.max }}</span>
+    </div>
+    <div class="sbp-row sbp-subtitle">
+      Type
+    </div>
+    <div class="sbp-row">
+      <sbp-pill
+        *ngFor="let type of types"
+        [text]="type"
+        (statusChange)="typeChanged(type, $event)"
+      >
+      </sbp-pill>
+    </div>
+  </div>
+</form>

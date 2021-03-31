@@ -1,4 +1,18 @@
-.column.is-3 {
-  display: inline-block;
-  width: 25%;
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bulma/css/bulma.css";
+
+@font-face {
+  font-family: "spaceman";
+  src: url("/assets/spaceman.ttf");
+}
+
+body {
+  background-color: #413c69;
+  font-family: spaceman;
+  color: #fff;
+}
+
+.sbp-row {
+  display: flex;
+  flex-direction: row;
 }

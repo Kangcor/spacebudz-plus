@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -6,10 +7,15 @@ import { DetailComponent } from "./components/detail/detail.component";
 import { FilterComponent } from "./components/filter/filter.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
+import { LoadingComponent } from "./components/loading/loading.component";
+import { PillComponent } from "./components/pill/pill.component";
 import { ResultsComponent } from "./components/results/results.component";
 import { SearchComponent } from "./pages/search/search.component";
 import { BudzService } from "./services/budz.service";
-import { LoadingComponent } from './components/loading/loading.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { DonateComponent } from './pages/donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +26,14 @@ import { LoadingComponent } from './components/loading/loading.component';
     FilterComponent,
     ResultsComponent,
     DetailComponent,
-    LoadingComponent
+    LoadingComponent,
+    PillComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    DonateComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [BudzService],
   bootstrap: [AppComponent]
 })
