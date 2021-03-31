@@ -8,7 +8,9 @@ import { SbpStore } from "../state/sbp.store";
 export class BudzService {
   private _budz: SpaceBud[] = Spacebudz.budz;
 
-  constructor(private _store: SbpStore) {}
+  constructor(private _store: SbpStore) {
+    this.processScarcity();
+  }
 
   public filter(filter: SearchFilter) {
     let filtered = [];
