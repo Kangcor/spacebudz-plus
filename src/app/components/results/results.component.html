@@ -1,1 +1,5 @@
-<sbp-detail *ngFor="let bud of budz" [bud]="bud"></sbp-detail>
+<div class="columns is-multiline is-centered">
+  <div class="column is-4" *ngFor="let bud of budz">
+    <sbp-detail [bud]="bud"></sbp-detail>
+  </div>
+</div>

@@ -1,14 +1,31 @@
-<span class="budz">
-  <img
-    src="{{ 'https://spacebudz.io/spacebudz/bud' + bud.id + '.png' }}"
-    width="300px"
-  />
-  ID: {{ bud.id }}<br />
-  Type: {{ bud.type }}<br />
-  Gadgets: {{ bud.gadgets }}<br />
-  Type scarcity: {{ bud.scarcity.type }}<br />
-  Gadget scarcity: <br />
-  <div *ngFor="let gadget of bud.scarcity.gadgets | keyvalue">
-    {{ gadget.key }}: {{ gadget.value }}
+<div class="card">
+<!--  <div class="card-image">-->
+<!--    <figure class="image is-128x128">-->
+<!--      <img src="{{ 'assets/budz/bud' + bud.id + '.png' }}"/>-->
+<!--    </figure>-->
+<!--  </div>-->
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <nav class="level">
+          <figure class="image is-128x128">
+            <img src="{{ 'assets/budz/bud' + bud.id + '.png' }}"/>
+          </figure>
+          <div class="level-item"><p class="title">#{{ bud.id }}</p></div>
+          <div class="level-item">
+            <sbp-rarity [text]="bud.type" [rarity]="bud.rarity.type" [scarcity]="bud.scarcity.type"></sbp-rarity>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content">
+      Gadgets: <br />
+      <div class="field is-grouped is-grouped-multiline">
+        <div class="control" *ngFor="let gadget of bud.rarity.gadgets | keyvalue">
+          <sbp-rarity [text]="gadget.key" [rarity]="gadget.value"></sbp-rarity>
+        </div>
+      </div>
+    </div>
   </div>
-</span>
+</div>

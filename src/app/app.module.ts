@@ -16,6 +16,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DonateComponent } from './pages/donate/donate.component';
+import { RarityComponent } from './components/rarity/rarity.component';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DonateComponent } from './pages/donate/donate.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    DonateComponent
+    DonateComponent,
+    RarityComponent,
+    TooltipDirective
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [BudzService],

@@ -8,6 +8,12 @@ export interface SpaceBud {
       [key: string]: number;
     };
   };
+  rarity?: {
+    type: string;
+    gadgets: {
+      [key: string]: string;
+    };
+  };
 }
 
 export interface SearchFilter {

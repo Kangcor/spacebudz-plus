@@ -1,0 +1,9 @@
+export const RarityTier = {
+  MYTHICAL: 'MYTHICAL',
+  LEGENDARY: 'LEGENDARY',
+  RARE: 'RARE',
+  UNCOMMON: 'UNCOMMON',
+  COMMON: 'COMMON',
+};
+
+

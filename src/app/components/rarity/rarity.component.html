@@ -1,0 +1,7 @@
+<div class="tags has-addons">
+  <span class="tag is-dark">{{ text }}</span>
+  <span class="tag" [ngClass]="rarity.toLowerCase()+'-color'">
+<!--        sbpTooltip [tooltipTitle]=""-->
+    {{ rarity | titlecase }}
+  </span>
+</div>
