@@ -18,6 +18,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { DonateComponent } from './pages/donate/donate.component';
 import { RarityComponent } from './components/rarity/rarity.component';
 import { TooltipDirective } from './directives/tooltip.directive';
+import { CompareComponent } from './pages/compare/compare.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TooltipDirective } from './directives/tooltip.directive';
     ContactComponent,
     DonateComponent,
     RarityComponent,
-    TooltipDirective
+    TooltipDirective,
+    CompareComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [BudzService],

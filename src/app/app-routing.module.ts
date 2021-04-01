@@ -5,6 +5,7 @@ import { ContactComponent } from "./pages/contact/contact.component";
 import { DonateComponent } from "./pages/donate/donate.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { SearchComponent } from "./pages/search/search.component";
+import { CompareComponent } from "./pages/compare/compare.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     component: SearchComponent,
     path: "search"
+  },
+  {
+    component: CompareComponent,
+    path: "compare/:id"
   },
   { path: "**", pathMatch: "full", redirectTo: "" }
 ];

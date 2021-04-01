@@ -41,6 +41,10 @@ export class BudzService {
     }
   }
 
+  public fetch(id: string) {
+    return this._budz.find((budz: SpaceBud) => budz.id === id);
+  }
+
   public filter(filter: SearchFilter) {
     let filtered = [];
     if (filter.types.length > 0) {
@@ -64,6 +68,34 @@ export class BudzService {
   public processScarcity() {
     this._budz.map(this._processBudScarcity);
     this._setSearchResult(this._budz);
+  }
+
+  public compareBudz(myBudz) {
+    const compareType = {};
+    const compareGlobal = {};
+    const perm = this.perm(myBudz.gadgets);
+    console.log(perm);
+    /*this._budz.forEach((budz: SpaceBud) => {
+      budz.gadgets
+    });*/
+    return myBudz;
+  }
+
+  private perm(xs) {
+    let ret = [];
+
+    for (let i = 0; i < xs.length; i = i + 1) {
+      let rest = this.perm(xs.slice(0, i).concat(xs.slice(i + 1)));
+
+      if(!rest.length) {
+        ret.push([xs[i]])
+      } else {
+        for(let j = 0; j < rest.length; j = j + 1) {
+          ret.push([xs[i]].concat(rest[j]))
+        }
+      }
+    }
+    return ret;
   }
 
   private _setSearchResult(data: SpaceBud[]) {
